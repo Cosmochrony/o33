@@ -108,8 +108,8 @@ parity protection.
 \label{sec:introduction}
 
 The finite Weil representation is simultaneously a model of exact harmonic analysis over
-finite fields and the carrier used by the O12 spectral-admissibility computation
-\cite{Weil1964,Gerardin1977,Beau2026a16}.
+finite fields and the carrier used by the O12 spectral-admissibility
+computation~\cite{Weil1964,Gerardin1977,Beau2026a16}.
 The present paper isolates a mathematical structure that was hidden by the original
 Gram--Schmidt implementation: the cumulative O12 filtration is a Fourier coordinate
 filtration whose mode sets have a closed additive form.
@@ -125,7 +125,7 @@ The mode space has a complete stabiliser controlled by a multiplicative set stab
 The Weyl-symbol algebra embeds the relevant induced representation into
 $\End(\C^q)$.
 Mackey induction and the Weyl pairing of principal series create canonical $M_2(\C)$
-commutants at this operator stratum \cite{Mackey1952,GelfandGraev1962}.
+commutants at this operator stratum~\cite{Mackey1952,GelfandGraev1962}.
 Harper dynamics gives a first axis, while boundary porosity can give a second.
 Parity simultaneously protects the complementary odd sector.
 
@@ -176,11 +176,16 @@ For $v=(a,b)\in\Fq^2$, define the symmetrically ordered displacement
 \end{equation}
 These $q^2$ operators are an orthogonal basis of $\End(V_c)$ and satisfy
 \begin{equation}
-  \rho_c(g)W_c(v)\rho_c(g)^{-1}=W_c(gv),
+  \rho_c(g)W_c(v)\rho_c(g)^{-1}=W_c\bigl(\varphi(g)v\bigr),
   \qquad g\in\G,
   \label{eq:weyl-covariance}
 \end{equation}
-after the fixed convention identification of phase-space coordinates.
+In the coordinates of~\eqref{eq:weyl-displacement}, the linear phase-space action is
+\begin{equation}
+  \varphi(g)=R_0g^{-\mathsf{T}}R_0,
+  \qquad R_0=\operatorname{diag}(1,-1).
+  \label{eq:phase-space-action}
+\end{equation}
 
 For a triple $(c_1,c_2,c_3)\in(\Fq^*)^3$, the O12 fingerprint vectors are products of
 three Schr\"odinger vectors and hence single Fourier characters.
@@ -224,6 +229,8 @@ Set
   On the symmetric generating set, $b(s)$ belongs to $\{0,\pm1\}$.
   The BFS ball of depth $n$ realises every integer $b(g)\in[-n,n]$, because powers of
   $Y$ realise the endpoints and intermediate values.
+  Conversely, each generator changes the second coordinate by at most one, so every ball
+  element satisfies $|b(g)|\leq n$.
 
   Write $t_i=b(s_i)$ for the three post-shell generator choices.
   The three successive second coordinates are
@@ -417,7 +424,7 @@ involution.
 \end{proof}
 
 The original finite Weil module $V_c$ itself has only its two irreducible parity factors and
-a two-dimensional scalar commutant \cite{Korinman2013}.
+a two-dimensional scalar commutant~\cite{Korinman2013}.
 The multiplicity-two structure therefore appears strictly at the operator stratum
 $\End(V_c)$, consistently with Schur's lemma.
 
@@ -615,7 +622,15 @@ For $q\equiv1\pmod4$, the odd-sector commutant is
   \End_{\G}(\Dminus)\cong M_2(\C)^{(q-1)/4}.
   \label{eq:odd-commutant}
 \end{equation}
-Thus the protected sector is not empty: it is a pure family of multiplicity doublets.
+For $q\equiv3\pmod4$, the quadratic character moves to the odd sector and contributes its
+two scalar constituents, giving
+\begin{equation}
+  \End_{\G}(\Dminus)\cong\C^2\oplus M_2(\C)^{(q-3)/4}.
+  \label{eq:odd-commutant-three}
+\end{equation}
+Thus the protected sector is not empty.
+It is a pure family of multiplicity doublets when $q\equiv1\pmod4$, while the
+$q\equiv3\pmod4$ branch also contains two scalar constituents.
 An algebraically natural odd operator would be
 \begin{equation}
   T_c^{\mathrm{odd}}
@@ -624,8 +639,8 @@ An algebraically natural odd operator would be
 \end{equation}
 It requires a choice inside each generator pair.
 The directed Q11 frontier explicitly selects no subset of generators, and its arrow is
-radial in BFS depth \cite{Beau2026q11of}.
-Projective temporal ordering orders that same radial depth variable \cite{Beau2026pto}.
+radial in BFS depth~\cite{Beau2026q11of}.
+Projective temporal ordering orders that same radial depth variable~\cite{Beau2026pto}.
 Neither construction presently supplies the phase-space-odd lift
 \eqref{eq:odd-harper}.
 
@@ -653,6 +668,7 @@ The principal mathematical questions left by this paper are the classification o
 exceptional multiplicative stabilisers $A_K$, a uniform arithmetic criterion for
 $\Delta_{\theta,c}(K)\ne0$, and the asymptotic distribution of porous depths.
 
+\newpage
 \bibliographystyle{plain}
 \bibliography{cosmochrony-bibliography}
 
