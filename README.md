@@ -27,9 +27,9 @@ Standard-Model generations, hypercharge, or a matter-sector Higgs mechanism.
 
 ## Status
 
-Mathematical draft with the external-primary-reference audit complete.
+Published mathematics-first paper with the external-primary-reference audit complete.
 The stabiliser classification is reduced to the conjectural completeness of the exact
-`C_4` and `C_6` families; the publication cascade remains pending.
+`C_4` and `C_6` families, stated in the paper as a precise open question.
 
 ## Compilation
 
