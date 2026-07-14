@@ -13,6 +13,12 @@ fingerprints and its operator-theoretic completion inside the finite Weil repres
 - The complete stabiliser is expressed through the multiplicative symmetry group `A_K`;
   an orbit-divisibility sieve and uniform exact `C_4` and `C_6` families sharpen the
   generic value `{+/-1}`.
+- An unconditional almost-periodicity lemma and a run-correspondence argument prove the
+  rigidity theorem `A_K = {+/-1}` whenever every run and gap of the mode set is longer
+  than the run count; completeness of the exceptional orders is reduced to the degenerate
+  boundary regime.
+- A third uniform family lives at the near-saturation end of that regime: a four-point
+  complement `{w, w+1, -w-1, -w}` carries `C_4` exactly when `2w^2+2w+1 = 0 (mod q)`.
 - Weyl quantisation realises the induced Mackey carrier internally in `End(V_rho)`.
 - Generic principal-series pairs carry canonical `M_2(C)` multiplicity algebras.
 - Harper dynamics produces the universal finite split `1+/-q^{-1/2}`.
@@ -28,8 +34,9 @@ Standard-Model generations, hypercharge, or a matter-sector Higgs mechanism.
 ## Status
 
 Published mathematics-first paper with the external-primary-reference audit complete.
-The stabiliser classification is reduced to the conjectural completeness of the exact
-`C_4` and `C_6` families, stated in the paper as a precise open question.
+Since v1.1, the multiplicative stabiliser is proved to be `{+/-1}` outside a degenerate
+boundary regime; completeness of the exceptional `C_4` and `C_6` orders remains open only
+inside that regime.
 
 ## Compilation
 
