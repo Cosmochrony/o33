@@ -11,7 +11,8 @@ fingerprints and its operator-theoretic completion inside the finite Weil repres
 - Boundary porosity is governed exactly by the parity of the cyclic spacings of the
   nine-point centre set.
 - The complete stabiliser is expressed through the multiplicative symmetry group `A_K`;
-  the generic value is `{+/-1}`, while exact `C_4` and `C_6` exceptions occur.
+  an orbit-divisibility sieve and uniform exact `C_4` and `C_6` families sharpen the
+  generic value `{+/-1}`.
 - Weyl quantisation realises the induced Mackey carrier internally in `End(V_rho)`.
 - Generic principal-series pairs carry canonical `M_2(C)` multiplicity algebras.
 - Harper dynamics produces the universal finite split `1+/-q^{-1/2}`.
@@ -26,9 +27,9 @@ Standard-Model generations, hypercharge, or a matter-sector Higgs mechanism.
 
 ## Status
 
-Initial mathematical draft.
-The exact theorem chain is in place; the external-reference audit, presentation polishing,
-and publication cascade remain pending.
+Mathematical draft with the external-primary-reference audit complete.
+The stabiliser classification is reduced to the conjectural completeness of the exact
+`C_4` and `C_6` families; the publication cascade remains pending.
 
 ## Compilation
 
