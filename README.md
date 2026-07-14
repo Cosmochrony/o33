@@ -24,8 +24,10 @@ fingerprints and its operator-theoretic completion inside the finite Weil repres
 - Weyl quantisation realises the induced Mackey carrier internally in `End(V_rho)`.
 - Generic principal-series pairs carry canonical `M_2(C)` multiplicity algebras.
 - Harper dynamics produces the universal finite split `1+/-q^{-1/2}`.
-- The eliminated residue produces a second axis exactly when its cyclotomic phase
-  determinant is non-zero.
+- The eliminated residue produces a second axis exactly when a short boundary character
+  sum over at most four hole pairs is non-zero: a Galois separation theorem removes the
+  cyclotomic phase determinant, and the vanishing locus of the boundary sum is completely
+  classified into antipodal-pair, cube-triple, and double-pair mechanisms.
 - The odd Weyl-symbol sector is a protected doublet reservoir under the deposited
   parity-even operator algebra.
 
@@ -35,10 +37,13 @@ Standard-Model generations, hypercharge, or a matter-sector Higgs mechanism.
 
 ## Status
 
-Published mathematics-first paper with the external-primary-reference audit complete.
+Published mathematics-first paper (v1.2.1) with the external-primary-reference audit
+complete.
 Since v1.1, the multiplicative stabiliser is proved to be `{+/-1}` outside a degenerate
 boundary regime; completeness of the exceptional `C_4` and `C_6` orders remains open only
 inside that regime.
+Branch `1.3` carries an unpublished draft closing the mixing criterion: the Galois
+separation theorem and the complete classification of the boundary-sum zeros.
 
 ## Compilation
 
