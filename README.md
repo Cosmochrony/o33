@@ -53,6 +53,14 @@ Branch `1.4` carries an unpublished draft: the Gaussian-box family and refined d
 mechanisms (withdrawing the earlier exhaustion reading and correcting the `q=37`
 four-point adjacency sentence), and the exact asymptotic point process of porous depths.
 
+## Reproducibility
+
+`scripts/porous_asymptotics.py` machine-certifies the exact asymptotic law of porous
+depths: the 240-triangle rational polygon decomposition, the count law
+`(3/20,7/24,9/40,5/24,1/8)`, the piecewise affine intensity, the total mass `28/15`, and
+the conditional mean `491/10080`.
+Standard library only; exact rational arithmetic; runs in under one second.
+
 ## Compilation
 
 ```bash

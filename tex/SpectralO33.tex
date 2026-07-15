@@ -160,8 +160,9 @@ The paper separates four epistemic levels.
   Weyl-symbol decomposition, and parity closure are proved uniformly.
   \item The Hecke decompositions are standard finite-group consequences, with conventions
   stated explicitly.
-  \item Exact cyclotomic claims are made either uniformly from their formulas or for the
-  cases actually certified.
+  \item Exact cyclotomic and rational-polyhedral computations are machine-certified;
+  their claims are asserted either uniformly from their formulas or for the cases actually
+  certified.
   \item Multi-prime frequencies and physical readings are labelled computational or
   interpretive and are not promoted to theorems.
 \end{enumerate}
@@ -702,9 +703,12 @@ exhaustive mechanism list.
   audit below finds no strictly larger stabiliser.
 \end{remark}
 
-Near saturation the boxes continue to exist in wrapped form: for $q<8r^2$ the reductions of
+Near saturation, Gaussian boxes also occur in wrapped form: for $q<8r^2$ the reductions of
 the $(2r+1)^2$ lattice points can collide, and the resulting set can cover all but a few
 residues.
+These wrapped boxes fall outside the hypothesis $q>8r^2$ of
+Proposition~\ref{prop:gaussian-boxes}; they are not realisations of the proposition and
+are certified individually by the audit below.
 The audited adjacent realisation of Proposition~\ref{prop:near-saturation} at $q=73$,
 with $K^{\mathrm{c}}=\{13,14,59,60\}$, is of this wrapped-box type at radius $r=4$.
 
@@ -717,9 +721,10 @@ $A_K\cong C_6$.
 They fall into three refined mechanisms:
 
 \begin{enumerate}[label=(\alph*)]
-  \item $52$ Gaussian boxes, with radii from one through seven; radii beyond four and some
-  smaller radii are realised at other depths through modular coincidences of the
-  nine-centre geometry, in direct or wrapped form;
+  \item $52$ Gaussian boxes, with radii from one through seven: uniform realisations of
+  Proposition~\ref{prop:gaussian-boxes}, together with audit-certified boxes realised at
+  other depths through modular coincidences of the nine-centre geometry, in direct or
+  wrapped form;
   \item $10$ four-point complements, each one free $C_4$ orbit as in
   Proposition~\ref{prop:small-complement} and none of box type;
   \item $13$ depth-zero $C_6$ sets, namely the Eisenstein family of
@@ -1144,7 +1149,8 @@ This motivates the following limit object.
   The nearest-integer branches, the sorting of the four distances, and the parity selector
   of Lemma~\ref{lem:four-spacings} are locally constant or continuous away from finitely
   many affine walls, which have Haar measure zero.
-  Finally, the atom positions differ by $n_j/q-g_j/2\to-2/q\to0$.
+  Finally, $n_j/q=d_j/(2q)-2/q$ and $d_j/(2q)\to g_j/2$, so the atom positions converge to
+  those of $\Xi$.
   Hence every bounded continuous functional of the point configuration converges, proving
   the claim.
 \end{proof}
@@ -1192,8 +1198,11 @@ The limit law is then computable in closed form.
   determined by the branch indices rather than by the bits.
   Summing the $240$ exact contributions in rational arithmetic gives both the joint count
   law~\eqref{eq:porous-count-law} and the density~\eqref{eq:porous-intensity}; the
-  computation is exact and machine-executed, in the sense of level~(iii) of
-  Section~\ref{sec:introduction}.
+  computation is exact and machine-certified, in the sense of level~(iii) of
+  Section~\ref{sec:introduction}, by the archived script
+  \texttt{scripts/porous\_asymptotics.py} of the public paper
+  repository\footnote{\url{https://github.com/Cosmochrony/o33}}, which reruns in under one
+  second using only the standard library.
   Consistency checks close exactly: the five probabilities sum to one, the density is
   continuous with $f(1/4)=0$, its total mass equals
   $\mathbb{E}[N]=\tfrac{28}{15}$, and the first moment of $(15/28)f$ is
@@ -1248,14 +1257,21 @@ depths were enumerated and the exceptional mode sets deduplicated as exact sets.
 The audit finds exactly $75$ distinct exceptional sets, $62$ of order four and $13$ of
 order six, classified without remainder into $52$ Gaussian boxes, $10$ non-box four-point
 complement orbits, and $13$ depth-zero Eisenstein sets.
-The realisations of Proposition~\ref{prop:gaussian-boxes} were verified exactly for every
-applicable prime in the audited range, including the wrapped near-saturation forms.
+The uniform realisations of Proposition~\ref{prop:gaussian-boxes} were verified exactly
+for every applicable prime in the audited range; the wrapped near-saturation boxes, which
+fall outside the hypothesis $q>8r^2$ of the proposition, were certified individually by
+the audit.
 Separate exhaustive order-eight searches at $q=193$, $241$, and $257$ enumerate
 $4{,}540{,}161$ pre-saturation cases and find no $C_8$ instance.
-The completeness kill-switch pre-registered for this audit --- an exceptional order outside
-$\{2,4,6\}$ or a set outside the three refined mechanisms --- did not fire, while the
-earlier exhaustion reading of the three family statements was itself refuted by the
-Gaussian-box family and is withdrawn in Section~\ref{sec:degenerate}.
+The completeness kill-switch pre-registered before this audit had two branches: an
+exceptional order outside $\{2,4,6\}$, or a mechanism not covered by the three published
+family statements.
+The second branch fired: the Gaussian-box family of Proposition~\ref{prop:gaussian-boxes}
+is exactly such a mechanism, and the exhaustion reading is withdrawn in
+Section~\ref{sec:degenerate}.
+The residual kill-switch, reformulated after the refinement --- an exceptional order
+outside $\{2,4,6\}$ or an audited set outside the three refined mechanisms --- did not
+fire anywhere in the audited range.
 
 The rigidity chain of Section~\ref{sec:rigidity} was validated by the same exact machinery.
 An exhaustive sweep over all normalised centre parameters and pre-saturation depths for
@@ -1377,10 +1393,10 @@ The stabiliser problem is now localised and mechanically described.
 Theorem~\ref{thm:rigidity} proves $A_K=\{\pm1\}$ whenever every run and gap of the mode set
 is longer than the run count, so exceptional orders occur only in the degenerate boundary
 regime of Corollary~\ref{cor:degenerate-reduction}.
-That regime hosts the infinite Gaussian-box $C_4$ family of
-Proposition~\ref{prop:gaussian-boxes}, which contains the depth-zero square and the wrapped
-near-saturation realisations, together with the non-box four-point complement orbits and
-the depth-zero Eisenstein $C_6$ family.
+That regime hosts the uniform Gaussian-box $C_4$ family of
+Proposition~\ref{prop:gaussian-boxes}, which contains the depth-zero square, together with
+the audit-certified wrapped boxes near saturation, the non-box four-point complement
+orbits, and the depth-zero Eisenstein $C_6$ family.
 The exhaustive audit through $q=151$ and the empty order-eight searches at
 $q=193$, $241$, and $257$ support, without proving, the completeness of these three refined
 mechanisms; the earlier exhaustion reading of the family statements is withdrawn.
