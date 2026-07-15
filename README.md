@@ -21,6 +21,13 @@ fingerprints and its operator-theoretic completion inside the finite Weil repres
   boundary regime.
 - A third uniform family lives at the near-saturation end of that regime: a four-point
   complement `{w, w+1, -w-1, -w}` carries `C_4` exactly when `2w^2+2w+1 = 0 (mod q)`.
+- The degenerate regime hosts an infinite Gaussian-box `C_4` family `Q_r(i)` generalising
+  the depth-zero square; an exhaustive audit through `q=151` classifies all 75 exceptional
+  sets into boxes, free four-point orbits, and Eisenstein `C_6` sets, with no `C_8` found
+  at `q=193,241,257`; completeness stays open.
+- The porous depths of a uniform admissible block converge to an explicit limiting point
+  process: count law `(3/20,7/24,9/40,5/24,1/8)`, mean `28/15`, piecewise affine intensity
+  with breakpoints `1/10,1/8,1/6`.
 - Weyl quantisation realises the induced Mackey carrier internally in `End(V_rho)`.
 - Generic principal-series pairs carry canonical `M_2(C)` multiplicity algebras.
 - Harper dynamics produces the universal finite split `1+/-q^{-1/2}`.
@@ -37,13 +44,14 @@ Standard-Model generations, hypercharge, or a matter-sector Higgs mechanism.
 
 ## Status
 
-Published mathematics-first paper (v1.2.1) with the external-primary-reference audit
+Published mathematics-first paper (v1.3) with the external-primary-reference audit
 complete.
 Since v1.1, the multiplicative stabiliser is proved to be `{+/-1}` outside a degenerate
-boundary regime; completeness of the exceptional `C_4` and `C_6` orders remains open only
-inside that regime.
-Branch `1.3` carries an unpublished draft closing the mixing criterion: the Galois
-separation theorem and the complete classification of the boundary-sum zeros.
+boundary regime; v1.3 closes the mixing criterion through the Galois separation theorem
+and the complete classification of the boundary-sum zeros.
+Branch `1.4` carries an unpublished draft: the Gaussian-box family and refined degenerate
+mechanisms (withdrawing the earlier exhaustion reading and correcting the `q=37`
+four-point adjacency sentence), and the exact asymptotic point process of porous depths.
 
 ## Compilation
 
