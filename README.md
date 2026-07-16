@@ -48,15 +48,15 @@ Standard-Model generations, hypercharge, or a matter-sector Higgs mechanism.
 
 ## Status
 
-Published mathematics-first paper (v1.3) with the external-primary-reference audit
+Published mathematics-first paper (v1.4) with the external-primary-reference audit
 complete.
 Since v1.1, the multiplicative stabiliser is proved to be `{+/-1}` outside a degenerate
 boundary regime; v1.3 closes the mixing criterion through the Galois separation theorem
 and the complete classification of the boundary-sum zeros.
-Branch `1.4` carries an unpublished draft: the Gaussian-box family and refined degenerate
-mechanisms (withdrawing the earlier exhaustion reading and correcting the `q=37`
-four-point adjacency sentence), and the exact asymptotic point process of porous depths.
-Branch `1.5` adds unconditional exact stabiliser theorems for every proper Gaussian box
+Version 1.4 adds the Gaussian-box family, refined degenerate mechanisms (withdrawing the
+earlier exhaustion reading and correcting the `q=37` four-point adjacency sentence), and
+the exact asymptotic point process of porous depths.
+Branch `1.5` carries an unpublished draft adding unconditional exact stabiliser theorems for every proper Gaussian box
 and every free four-point complement orbit. The completeness of the three refined
 mechanisms and the Eisenstein top-level-set theorem remain open.
 
