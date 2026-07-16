@@ -92,9 +92,10 @@ unconditional almost-periodicity lemma, a run-correspondence argument, and a Dio
 descent prove that the stabiliser is $\{\pm1\}$ whenever every run and gap of the mode set
 is longer than the run count.
 Completeness of the exceptional orders is thereby reduced to a degenerate boundary regime,
-where the depth-zero square extends to an infinite family of Gaussian boxes: an exhaustive
-audit through $q=151$ finds $75$ exceptional sets, all of order four or six and all within
-three refined mechanisms, with no order eight at $q=193$, $241$, $257$.
+where a fourth-moment argument proves that every proper Gaussian box has exact stabiliser
+$C_4$, and a free four-point complement orbit has the same exact stabiliser.
+An exhaustive audit through $q=151$ finds $75$ exceptional sets, all of order four or six
+and all within three refined mechanisms, with no order eight at $q=193$, $241$, $257$.
 Finally, the porous depths of a uniform block converge to an explicit point process, with
 count law $(3/20,7/24,9/40,5/24,1/8)$, mean $28/15$, and piecewise affine intensity.
 
@@ -139,6 +140,8 @@ That set stabiliser is rigid: an additive almost-periodicity argument proves it 
 $\{\pm1\}$ outside a degenerate boundary regime.
 The degenerate regime itself hosts an infinite uniform family of Gaussian boxes together
 with two further refined mechanisms, exactly audited through $q=151$.
+Every proper Gaussian box and every free four-point complement orbit has exact stabiliser
+$C_4$.
 The porosity statistics have an exact scaling limit: the porous depths of a uniform block
 converge to an explicit point process with rational count law and piecewise affine
 intensity.
@@ -157,7 +160,8 @@ The paper separates four epistemic levels.
 
 \begin{enumerate}[label=(\roman*)]
   \item The sumset formula, spacing theorem, stabiliser formula, additive rigidity theorem,
-  Weyl-symbol decomposition, and parity closure are proved uniformly.
+  exact Gaussian-box and free-complement stabilisers, Weyl-symbol decomposition, and
+  parity closure are proved uniformly.
   \item The Hecke decompositions are standard finite-group consequences, with conventions
   stated explicitly.
   \item Exact cyclotomic and rational-polyhedral computations are machine-certified;
@@ -620,6 +624,21 @@ $\gcd(q-1,|K|-1)=\gcd(q-1,4)$.
   In the order-four case any point orbit has size four, hence equals $K^{\mathrm{c}}$.
 \end{proof}
 
+\begin{corollary}[Exact free-orbit complement stabiliser]
+  \label{cor:free-orbit-complement}
+  Let $q\equiv1\pmod4$, let $i^2=-1$, and suppose
+  \[
+    K^{\mathrm{c}}=\{z,iz,-z,-iz\}
+  \]
+  with four distinct non-zero elements.
+  Then $A_K=\langle i\rangle\cong C_4$.
+\end{corollary}
+
+\begin{proof}
+  The subgroup $\langle i\rangle$ preserves $K^{\mathrm{c}}$, hence lies in $A_K$.
+  Proposition~\ref{prop:small-complement} gives $|A_K|\mid4$, so equality follows.
+\end{proof}
+
 The free orbit of Proposition~\ref{prop:small-complement} is strictly broader than the
 adjacent form of Proposition~\ref{prop:near-saturation}.
 At $q=37$, the normalised block $(\widetilde u,\widetilde v)=(9,15)$ reaches, at depth
@@ -691,6 +710,178 @@ exhaustive mechanism list.
   $q>8r^2$.
 \end{proof}
 
+\begin{lemma}[Exact Gaussian collision dichotomy]
+  \label{lem:gaussian-collision-dichotomy}
+  Let $q\equiv1\pmod4$, choose $0<u<v$ with $q=u^2+v^2$, and choose the root
+  $i^2=-1$ for which $\pi=u+iv$ vanishes in $\Fq$.
+  Let
+  \[
+    \Lambda=\pi\mathbb{Z}[i]
+    =\{(x,y)\in\mathbb{Z}^2:x+iy=0\text{ in }\Fq\}.
+  \]
+  Every non-zero vector of $\Lambda$ has $\ell^\infty$-norm either $v$, attained by the
+  four unit rotations of $\pi$, or at least $u+v$.
+  Moreover, the reduction $[-r,r]^2\to Q_r(i)$ is injective if and only if
+  \[
+    \mu_\infty(\Lambda)>2r,
+    \qquad
+    \mu_\infty(\Lambda)\coloneqq
+    \min_{0\ne\lambda\in\Lambda}\|\lambda\|_\infty=v.
+  \]
+\end{lemma}
+
+\begin{proof}
+  Write $\lambda=\pi\gamma$.
+  If $N(\gamma)=1$, then $\gamma$ is a Gaussian unit and the four possible vectors have
+  sup-norm $v$.
+  If $N(\gamma)=2$, the associates of
+  \[
+    \pi(1+i)=(u-v)+i(u+v)
+  \]
+  have sup-norm $u+v$.
+  This case must be computed directly: the Euclidean bound alone does not separate it.
+  There is no Gaussian integer of norm three.
+  If $N(\gamma)\geq4$, then
+  \[
+    \|\lambda\|_\infty
+    \geq\frac{|\lambda|}{\sqrt2}
+    \geq\sqrt{2q}
+    \geq u+v,
+  \]
+  where the last inequality is $(u+v)^2\leq2(u^2+v^2)$.
+  This proves the short-vector dichotomy and $\mu_\infty(\Lambda)=v$.
+
+  Two points of $[-r,r]^2$ have the same reduction exactly when their difference is a
+  non-zero vector of $\Lambda\cap[-2r,2r]^2$.
+  This proves the injectivity criterion.
+\end{proof}
+
+\begin{theorem}[Exact stabiliser of every proper Gaussian box]
+  \label{thm:gaussian-box-stabiliser}
+  Let $q\equiv1\pmod4$, let $i^2=-1$ in $\Fq$, and let $r\geq1$ be such that
+  $Q_r(i)\ne\Fq$.
+  Then
+  \[
+    A_{Q_r(i)}=\langle i\rangle\cong C_4.
+  \]
+\end{theorem}
+
+\begin{proof}
+  The box is unchanged when $i$ is replaced by $-i$, so choose the root convention of
+  Lemma~\ref{lem:gaussian-collision-dichotomy}.
+  Put
+  \[
+    S_4(Q_r)=\sum_{z\in Q_r(i)}z^4.
+  \]
+  Every $a\in A_{Q_r(i)}$ permutes the box, hence
+  \begin{equation}
+    S_4(Q_r)=a^4S_4(Q_r).
+    \label{eq:gaussian-fourth-moment-invariance}
+  \end{equation}
+  It is therefore enough to prove $S_4(Q_r)\ne0$.
+
+  Suppose first that $\mu_\infty(\Lambda)>2r$.
+  Lemma~\ref{lem:gaussian-collision-dichotomy} makes the square reduction injective.
+  Direct summation over $z=x+iy$, using the standard second- and fourth-power sums,
+  gives
+  \begin{equation}
+    S_4(Q_r)
+    =-\frac{2r(r+1)(2r+1)^2(2r^2+2r+1)}{15}.
+    \label{eq:gaussian-fourth-moment-injective}
+  \end{equation}
+  Properness implies $2r+1<q$, since otherwise $[-r,r]$ already covers $\Fq$.
+  Thus the first four numerator factors do not vanish modulo $q$.
+  If $q$ divided $2r^2+2r+1=r^2+(r+1)^2$, then one of
+  $(r,r+1)$ and $(r,-r-1)$ would belong to $\Lambda$ and have sup-norm at most $2r$,
+  contradicting the present hypothesis.
+  The smallest relevant prime is $q=13$, so $15$ is invertible and
+  \eqref{eq:gaussian-fourth-moment-injective} is non-zero.
+
+  Suppose now that $\mu_\infty(\Lambda)=v\leq2r$.
+  Set
+  \[
+    R=\frac{u+v-1}{2},
+    \qquad
+    t=R-r.
+  \]
+  We first record the collision count for any integer $s$ satisfying
+  $v\leq2s<u+v$.
+  The short-vector dichotomy shows that the only possible collision differences inside
+  $[-s,s]^2$ are the four unit rotations of $\pi$.
+  Every reduction fibre has multiplicity at most two: two distinct partners would differ
+  by a vector of sup-norm at least $u+v>2s$.
+  Representatives of the unordered double fibres are the two rectangles
+  \[
+    D_1(s)=[-s+u,s]\times[-s+v,s],
+    \qquad
+    D_2(s)=[-s,s-v]\times[-s+u,s].
+  \]
+  Their images are disjoint, since an overlap would create a fibre with three
+  representatives.
+  Each rectangle has $(2s+1-u)(2s+1-v)$ points, so
+  \begin{equation}
+    |Q_s(i)|=(2s+1)^2-2(2s+1-u)(2s+1-v).
+    \label{eq:gaussian-collision-count}
+  \end{equation}
+  The value $s=R$ satisfies $v\leq2R<u+v$, and the right-hand side of
+  \eqref{eq:gaussian-collision-count} is then $q$.
+  Thus $Q_R(i)=\Fq$.
+  Properness gives $r<R$, hence $2r<u+v$ and $t\geq1$.
+  The present wrapped hypothesis also gives $v\leq2r$, so the same count applies at
+  $s=r$.
+  Write
+  \[
+    C_1=D_1(r),
+    \qquad
+    C_2=D_2(r).
+  \]
+  Wrappedness gives
+  \begin{equation}
+    2t=u+v-1-2r\leq u-1.
+    \label{eq:gaussian-wrapped-bound}
+  \end{equation}
+
+  Let $\phi(x,y)=x+iy$.
+  Subtracting one representative of every double fibre yields
+  \begin{equation}
+    S_4(Q_r)
+    =\sum_{[-r,r]^2}\phi^4
+     -\sum_{C_1}\phi^4
+     -\sum_{C_2}\phi^4.
+    \label{eq:gaussian-collision-moment}
+  \end{equation}
+  Applying the power-sum formulas to the three rectangles and substituting
+  $r=(u+v-1)/2-t$ gives
+  \begin{equation}
+    S_4(Q_r)=\frac{t^2(4t^2-1)(4t^2+1)}{15}.
+    \label{eq:gaussian-fourth-moment-wrapped}
+  \end{equation}
+  For an explicit division certificate, let $E$ denote the right-hand side of
+  \eqref{eq:gaussian-collision-moment} and let $F$ denote the right-hand side of
+  \eqref{eq:gaussian-fourth-moment-wrapped}.
+  Reduction by $i^2=-1$ gives the exact identity
+  \begin{equation}
+    60(E-F)=-(u+iv)H(u,v,t),
+    \label{eq:gaussian-division-certificate}
+  \end{equation}
+  where
+  \begin{align*}
+    H={}&240t^4u-240it^4v+(-480+480i)t^3uv-60t^2u^3\\
+       &+(240-180i)t^2u^2v+(180-240i)t^2uv^2+60it^2v^3\\
+       &+(-120+120i)tu^2v^2+u^5-iu^4v+14u^3v^2\\
+       &-14iu^2v^3+uv^4-u-iv^5+iv.
+  \end{align*}
+  Since $u+iv=0$ in $\Fq$, this proves
+  \eqref{eq:gaussian-fourth-moment-wrapped}.
+  By~\eqref{eq:gaussian-wrapped-bound}, the three positive factors
+  $t$, $4t^2-1$, and $4t^2+1$ are all strictly smaller than $q$.
+  Hence the wrapped fourth moment is non-zero.
+
+  In both cases, \eqref{eq:gaussian-fourth-moment-invariance} forces $a^4=1$.
+  Thus $A_{Q_r(i)}\subseteq\langle i\rangle$, while the reverse inclusion follows from
+  the rotational symmetry of the box.
+\end{proof}
+
 \begin{remark}
   \label{rem:box-degenerate}
   When the $2r+1$ rows of $Q_r(i)$ are pairwise non-adjacent cyclic intervals, the box has
@@ -698,17 +889,17 @@ exhaustive mechanism list.
   The family therefore sits exactly on the boundary excluded by
   Theorem~\ref{thm:rigidity}, as it must.
   For $r=1$ the proposition recovers the depth-zero square of
-  Proposition~\ref{prop:exceptional-families}, where the stabiliser is proved to be exactly
-  $C_4$; for $r\geq2$ only the containment is proved uniformly here, and the exhaustive
-  audit below finds no strictly larger stabiliser.
+  Proposition~\ref{prop:exceptional-families}.
+  Theorem~\ref{thm:gaussian-box-stabiliser} proves that every proper direct or wrapped
+  Gaussian box has stabiliser exactly $C_4$.
 \end{remark}
 
 Near saturation, Gaussian boxes also occur in wrapped form: for $q<8r^2$ the reductions of
 the $(2r+1)^2$ lattice points can collide, and the resulting set can cover all but a few
 residues.
 These wrapped boxes fall outside the hypothesis $q>8r^2$ of
-Proposition~\ref{prop:gaussian-boxes}; they are not realisations of the proposition and
-are certified individually by the audit below.
+Proposition~\ref{prop:gaussian-boxes}; they are not realisations of that proposition, but
+their exact stabiliser is covered by Theorem~\ref{thm:gaussian-box-stabiliser}.
 The audited adjacent realisation of Proposition~\ref{prop:near-saturation} at $q=73$,
 with $K^{\mathrm{c}}=\{13,14,59,60\}$, is of this wrapped-box type at radius $r=4$.
 
@@ -722,11 +913,12 @@ They fall into three refined mechanisms:
 
 \begin{enumerate}[label=(\alph*)]
   \item $52$ Gaussian boxes, with radii from one through seven: uniform realisations of
-  Proposition~\ref{prop:gaussian-boxes}, together with audit-certified boxes realised at
-  other depths through modular coincidences of the nine-centre geometry, in direct or
-  wrapped form;
-  \item $10$ four-point complements, each one free $C_4$ orbit as in
-  Proposition~\ref{prop:small-complement} and none of box type;
+  Proposition~\ref{prop:gaussian-boxes}, together with boxes realised at other depths
+  through modular coincidences of the nine-centre geometry, in direct or wrapped form;
+  all have exact stabiliser $C_4$ by
+  Theorem~\ref{thm:gaussian-box-stabiliser};
+  \item $10$ four-point complements, each one a free $C_4$ orbit with exact stabiliser
+  given by Corollary~\ref{cor:free-orbit-complement}, and none of box type;
   \item $13$ depth-zero $C_6$ sets, namely the Eisenstein family of
   Proposition~\ref{prop:exceptional-families}.
 \end{enumerate}
@@ -740,9 +932,12 @@ These are exact finite audits, not a completeness theorem.
 The residual open problem is sharpened accordingly: prove or refute that the three refined
 mechanisms exhaust the degenerate regime for arbitrary odd primes, and that no stabiliser
 order eight or higher ever occurs.
-Each mechanism has small-parameter structure --- window grids, free complement orbits, and
-hexagonal Eisenstein discs --- so the orbit and adjacency analysis used above appears
-applicable, but no uniform argument is deposited.
+The Gaussian and free-complement $C_4$ mechanisms are now proved uniformly.
+For the Eisenstein $C_6$ mechanism, Proposition~\ref{prop:exceptional-families} proves the
+stabiliser value, but a uniform identification of its top autocorrelation level set remains
+open beyond the exact audit.
+The unit groups of $\mathbb{Z}[i]$ and the Eisenstein integers provide a structural route
+toward completeness, but no theorem yet excludes a fourth degenerate mechanism.
 
 \section{The Internal Mackey Carrier}
 \label{sec:carrier}
@@ -1258,9 +1453,12 @@ The audit finds exactly $75$ distinct exceptional sets, $62$ of order four and $
 order six, classified without remainder into $52$ Gaussian boxes, $10$ non-box four-point
 complement orbits, and $13$ depth-zero Eisenstein sets.
 The uniform realisations of Proposition~\ref{prop:gaussian-boxes} were verified exactly
-for every applicable prime in the audited range; the wrapped near-saturation boxes, which
-fall outside the hypothesis $q>8r^2$ of the proposition, were certified individually by
-the audit.
+for every applicable prime in the audited range.
+Theorem~\ref{thm:gaussian-box-stabiliser} now proves the exact $C_4$ stabiliser of every
+proper box, including the wrapped near-saturation boxes outside the hypothesis
+$q>8r^2$ of that proposition.
+Corollary~\ref{cor:free-orbit-complement} proves the exact $C_4$ stabiliser of every free
+four-point complement orbit.
 Separate exhaustive order-eight searches at $q=193$, $241$, and $257$ enumerate
 $4{,}540{,}161$ pre-saturation cases and find no $C_8$ instance.
 The completeness kill-switch pre-registered before this audit had two branches: an
@@ -1395,13 +1593,20 @@ is longer than the run count, so exceptional orders occur only in the degenerate
 regime of Corollary~\ref{cor:degenerate-reduction}.
 That regime hosts the uniform Gaussian-box $C_4$ family of
 Proposition~\ref{prop:gaussian-boxes}, which contains the depth-zero square, together with
-the audit-certified wrapped boxes near saturation, the non-box four-point complement
-orbits, and the depth-zero Eisenstein $C_6$ family.
+wrapped boxes near saturation, non-box four-point complement orbits, and the depth-zero
+Eisenstein $C_6$ family.
+Theorem~\ref{thm:gaussian-box-stabiliser} proves the exact stabiliser of every proper
+Gaussian box, and Corollary~\ref{cor:free-orbit-complement} proves it for every free
+four-point complement orbit.
 The exhaustive audit through $q=151$ and the empty order-eight searches at
 $q=193$, $241$, and $257$ support, without proving, the completeness of these three refined
 mechanisms; the earlier exhaustion reading of the family statements is withdrawn.
 The remaining completeness question is to prove or refute that the refined mechanisms and
 the orders four and six exhaust the degenerate regime for arbitrary odd primes.
+The top autocorrelation level of the Eisenstein $C_6$ sets remains audit-certified rather
+than uniformly proved.
+The unit groups of the Gaussian and Eisenstein integers provide an organising principle
+for this residual question, not a completeness theorem.
 The mixing question is closed: Theorem~\ref{thm:galois-separation} removes the phase
 determinant for every generic character, and Theorem~\ref{thm:zero-classification} lists
 the only three vanishing mechanisms of the boundary character sum, on at most four hole
