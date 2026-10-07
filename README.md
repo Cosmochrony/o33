@@ -48,7 +48,7 @@ Standard-Model generations, hypercharge, or a matter-sector Higgs mechanism.
 
 ## Status
 
-Published mathematics-first paper (v1.5; version 1.5.1 is a bibliography-only patch release)
+Mathematics-first paper, v1.5.1 (local candidate; last deposited version 1.5; bibliography-only patch)
 with the external-primary-reference audit complete.
 Since v1.1, the multiplicative stabiliser is proved to be `{+/-1}` outside a degenerate
 boundary regime; v1.3 closes the mixing criterion through the Galois separation theorem
